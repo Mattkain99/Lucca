@@ -28,8 +28,12 @@ public static class FileParser
         while((line = stream.ReadLine())!=null && i < nbRate)
         {
             var rateLine = line.Split(";");
-            conversions.Add(new Conversion(rateLine[0], rateLine[1],
-                float.Parse(rateLine[2], CultureInfo.InvariantCulture)));
+            var rate = Math.Round(float.Parse(rateLine[2], CultureInfo.InvariantCulture), 4);
+            var conversion = new Conversion(rateLine[0], rateLine[1], (float)rate);
+            var invertedRate = Math.Round(1 / conversion.Rate, 4);
+            var invertedConversion = new Conversion(conversion.To, conversion.From, (float)invertedRate);
+            conversions.Add(conversion);
+            conversions.Add(invertedConversion);
             i++;
         }
 
