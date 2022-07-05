@@ -29,7 +29,7 @@
       <None Update="empty.txt">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
-      <None Update="devise_wrongInputLine.txt">
+      <None Update="devise_valid.txt">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
     </ItemGroup>

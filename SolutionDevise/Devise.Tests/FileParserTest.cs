@@ -20,10 +20,12 @@ public class FileParserTest
         var expectedConversions = new List<Conversion>
         {
             new Conversion("AUD", "CHF", 0.9661f),
-            new Conversion("JPY", "KRW", 13.1151f)
+            new Conversion("CHF", "AUD", 1/0.9661f),
+            new Conversion("JPY", "KRW", 13.1151f),
+            new Conversion("KRW", "JPY", 1/13.1151f)
         };
         var expectedFile = new CurrenciesFile("EUR", "JPY", 550, expectedConversions);
-        var currentFile = FileParser.ParseFile("./devise_wrongInputLine.txt");
+        var currentFile = FileParser.ParseFile("./devise_valid.txt");
         
         Assert.Equal(expectedFile.Amount, currentFile.Amount);
         Assert.Equal(expectedFile.From, currentFile.From);
