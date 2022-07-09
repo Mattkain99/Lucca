@@ -1,0 +1,36 @@
+<div class="card">
+  <div class="card-content">
+    <lu-user-tile [user]="user"></lu-user-tile>
+    <div class="divider u-marginBottomSmaller u-marginTopSmaller"></div>
+
+    <nav class="menu mod-small">
+      <ul class="menu-list">
+        <li class="menu-list-item">
+          <a class="menu-list-item-action" aria-current="page">Main Room</a>
+        </li>
+        <li class="menu-list-item">
+          <a href="#" class="menu-list-item-action">Menu 2</a>
+        </li>
+        <li class="menu-list-item">
+          <a href="#" class="menu-list-item-action">Menu 3</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="with-sroll" #list>
+      <ul class="list" #messagesQuery>
+        <app-message-item *ngFor="let message of messages" [message]="message"></app-message-item>
+      </ul>
+    </div>
+  </div>
+  <div class="card-footer">
+    <div class="card-footer-content">
+      <label class="textfield mod-block">
+        <input class="textfield-input" type="text" placeholder="Send a message !" [(ngModel)]="content"/>
+      </label>
+      <button type="button" class="button mod-icon u-marginLeftSmall" (click)="sendMessage()" [disabled]="content.trim()===''">
+        <span aria-hidden="true" class="lucca-icon icon-send"></span>
+      </button>
+    </div>
+  </div>
+</div>
