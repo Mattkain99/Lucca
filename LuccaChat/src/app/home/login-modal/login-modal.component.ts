@@ -24,7 +24,6 @@ export class LoginModalComponent implements ILuModalContent {
 
   change(): void {
     this.submitDisabled = this.newUser.firstName === '' || this.newUser.lastName === '';
-    console.log(this.submitDisabled);
   }
 
   submitAction(): ILuUser {

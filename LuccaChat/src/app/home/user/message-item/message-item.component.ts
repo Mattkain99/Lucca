@@ -1,5 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Message} from "../../models/message.model";
+import {ILuUser} from "@lucca-front/ng/user";
 
 @Component({
   selector: 'app-message-item',
@@ -8,12 +9,12 @@ import {Message} from "../../models/message.model";
 })
 export class MessageItemComponent implements OnInit {
 
+  @Input() currentUser!: ILuUser;
   @Input() message!: Message;
+  @Output() deleteMessage = new EventEmitter<Message>();
 
   constructor() { }
 
   ngOnInit(): void {
   }
-
-
 }

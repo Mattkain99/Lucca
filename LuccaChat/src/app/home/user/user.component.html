@@ -1,25 +1,34 @@
 <div class="card">
   <div class="card-content">
-    <lu-user-tile [user]="user"></lu-user-tile>
+    <div>
+      <lu-user-tile [user]="user" [displayFormat]="displayFormat"></lu-user-tile>
+      <button class="button palette-error" (click)="logout.emit(user)">Log out</button>
+    </div>
+
     <div class="divider u-marginBottomSmaller u-marginTopSmaller"></div>
 
     <nav class="menu mod-small">
       <ul class="menu-list">
         <li class="menu-list-item">
-          <a class="menu-list-item-action" aria-current="page">Main Room</a>
+          <a (click)="selectRecipient()"
+             class="menu-list-item-action"
+             [class.is-active] ="selectedRecipient === undefined"
+          >Main Room</a>
         </li>
-        <li class="menu-list-item">
-          <a href="#" class="menu-list-item-action">Menu 2</a>
+
+        <li class="menu-list-item" *ngFor="let recipient of recipients">
+          <a (click)="selectRecipient(recipient)"
+             class="menu-list-item-action"
+             [class.is-active] ="selectedRecipient === recipient"
+          >{{recipient.firstName}} {{recipient.lastName}}</a>
         </li>
-        <li class="menu-list-item">
-          <a href="#" class="menu-list-item-action">Menu 3</a>
-        </li>
+
       </ul>
     </nav>
 
-    <div class="with-sroll" #list>
-      <ul class="list" #messagesQuery>
-        <app-message-item *ngFor="let message of messages" [message]="message"></app-message-item>
+    <div class="with-scroll">
+      <ul class="list">
+        <app-message-item *ngFor="let message of filteredMessages" [message]="message" [currentUser]="user" (deleteMessage)="deleteMessage.emit($event)"></app-message-item>
       </ul>
     </div>
   </div>

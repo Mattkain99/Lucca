@@ -1,7 +1,7 @@
 <div class="main-content u-marginStandard">
   <div class="grid">
     <div class="grid-m3" *ngFor="let user of users">
-      <app-user [messages]="messages" [user]="user" (sentMessage)="publish($event)"></app-user>
+      <app-user [messages]="messages" [user]="user" [recipients]="getRecipients(user)" (sentMessage)="publish($event)" (logout)="logout($event)" (deleteMessage)="removeMessage($event)"></app-user>
     </div>
   </div>
   <button (click)="openModal()" class="button palette-secondary u-marginTopSmall" *ngIf="users.length<4">New user</button>

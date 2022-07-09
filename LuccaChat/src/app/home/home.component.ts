@@ -24,6 +24,14 @@ export class HomeComponent implements OnInit {
     this.messages.push(message);
   }
 
+  logout(user: ILuUser): void {
+    this.users = this.users.filter(u => u.id !== user.id);
+  }
+
+  removeMessage(message: Message): void {
+    this.messages = this.messages.filter(m => m !== message);
+  }
+
   openModal(): void {
     const modal = this.modal.open<LoginModalComponent, undefined, ILuUser>(LoginModalComponent);
     modal.onClose.subscribe(user => {
@@ -31,5 +39,8 @@ export class HomeComponent implements OnInit {
       this.users.push(user);
       this.lastUserId++;
     });
+  }
+  getRecipients(user: ILuUser): ILuUser[] {
+    return this.users.filter(u => u.id !== user.id);
   }
 }
