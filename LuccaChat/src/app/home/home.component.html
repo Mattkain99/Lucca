@@ -1,0 +1,16 @@
+<div class="main-content u-marginStandard">
+  <div class="grid">
+    <div class="grid-m3" *ngFor="let user of users">
+      <app-user [messages]="messages" [user]="user" [recipients]="getRecipients(user)" (sentMessage)="publish($event)"
+                (logout)="logout($event)" (deleteMessage)="removeMessage($event)"></app-user>
+    </div>
+    <div class="grid-m3">
+      <div class="grid mod-mCenter">
+        <button (click)="openModal()" class="button palette-secondary u-marginTopSmall" *ngIf="users.length<4">
+          <span aria-hidden="true" class="lucca-icon icon-login"></span> Login
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+

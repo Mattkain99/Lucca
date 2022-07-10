@@ -1,0 +1,19 @@
+.card-footer-content {
+  display: contents;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.with-scroll {
+  overflow: auto;
+}
+
+.card-header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-content {
+  height: 85vh;
+}
