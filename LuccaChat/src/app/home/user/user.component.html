@@ -1,8 +1,10 @@
 <div class="card">
   <div class="card-content">
-    <div>
+    <div class="card-header-content">
       <lu-user-tile [user]="user" [displayFormat]="displayFormat"></lu-user-tile>
-      <button class="button palette-error" (click)="logout.emit(user)">Log out</button>
+      <button class="button palette-warning" (click)="logout.emit(user)">
+        <span aria-hidden="true" class="lucca-icon icon-logout"></span>Logout
+      </button>
     </div>
 
     <div class="divider u-marginBottomSmaller u-marginTopSmaller"></div>
@@ -35,7 +37,7 @@
   <div class="card-footer">
     <div class="card-footer-content">
       <label class="textfield mod-block">
-        <input class="textfield-input" type="text" placeholder="Send a message !" [(ngModel)]="content"/>
+        <input class="textfield-input" type="text" placeholder="Send a message !" [(ngModel)]="content" (keyup.enter)="sendMessage()"/>
       </label>
       <button type="button" class="button mod-icon u-marginLeftSmall" (click)="sendMessage()" [disabled]="content.trim()===''">
         <span aria-hidden="true" class="lucca-icon icon-send"></span>

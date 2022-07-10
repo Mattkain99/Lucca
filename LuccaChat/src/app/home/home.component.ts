@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
   }
 
   publish(message: Message): void {
-    this.messages.push(message);
+    this.messages.unshift(message);
   }
 
   logout(user: ILuUser): void {

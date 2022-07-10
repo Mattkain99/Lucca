@@ -5,7 +5,15 @@
 }
 
 .with-scroll {
-  height: 300px;
   overflow: auto;
 }
 
+.card-header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-content {
+  height: 85vh;
+}
