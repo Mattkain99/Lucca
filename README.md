@@ -21,7 +21,7 @@ AUD;JPY;86.0305
 EUR;USD;1.2989  
 JPY;INR;0.6571
 
-
+![Capture](https://user-images.githubusercontent.com/25097226/178153116-185c341d-a0b6-437f-bc1b-769147e5bd5f.PNG)
 
 ## Rendu
 
@@ -32,7 +32,12 @@ Le programme parcours le fichier texte, il prend la devise d'origine, le montant
 # 2 - LuccaChat
 Web app de simulation de chat. Il n'y a pas de code serveur, ce programme est orienté Frontend.
 Réalisé en Angular13, il s'agit d'un test technique permettant d'explorer les fonctionnalités d'un site web dynamique à page unique.
+Utilisation la librairie LuccaFont :
 
+- [Lucca Front](https://prisme.lucca.io/94310e217/p/68bde1-prisme-le-design-faon-lucca)
+- [Lucca Github](https://github.com/LuccaSA)
+
+Pour lancer le site : il faut exécuter successivement les commandes `npm install`, puis `npm start`.
 	
 
 
@@ -51,6 +56,13 @@ Cela ouvre une modale permettant de renseigner le nom et le prénom.
 - Il y a un maximum de 4 utilisateurs qui peuvent se connecter.
 - Par défaut chaque utilisateur est dans un salon commun (Main Room).
 - Chaque nouvel utilisateur qui se connecte créer également une section à son nom  sous forme d'onglet, qui permet à deux utilisateur de s'envoyer des messages privés. 
+
+![image](https://user-images.githubusercontent.com/25097226/178153181-42b22f3d-100f-469e-8384-d20965b9ba83.png)
+
+![image](https://user-images.githubusercontent.com/25097226/178153213-11933ad2-9bfa-4e5c-98c9-cf374869b457.png)
+
+![image](https://user-images.githubusercontent.com/25097226/178153343-a7da35cc-95ff-4b91-9218-5b295d7eec96.png)
+
 
 ## Le fonctionnement
 
