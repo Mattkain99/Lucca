@@ -4,10 +4,6 @@
   justify-content: space-between;
 }
 
-.with-scroll {
-  overflow: auto;
-}
-
 .card-header-content {
   display: flex;
   justify-content: space-between;
@@ -16,4 +12,5 @@
 
 .card-content {
   height: 85vh;
+  overflow: auto;
 }
